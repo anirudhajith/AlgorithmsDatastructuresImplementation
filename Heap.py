@@ -59,6 +59,17 @@ class Heap:
         while self.parent(index) >= 1 and self.array[self.parent(index)] < self.array[index]:
             self.swap(index, self.parent(index))
             index = self.parent(index)
+    
+    def sort(self):
+        fullSize = self.size
+        sortedArray = []
+        for index in range(fullSize):
+            sortedArray.append(self.getMax())
+            self.extractMax()
+        
+        sortedArray.reverse()
+        return sortedArray
+        
 
     def left(self, index):
         return index * 2
@@ -83,6 +94,5 @@ print(aHeap.array)
 aHeap.extractMax()
 print(aHeap.array)
 
-while True:
-    aHeap.extractMax()
-    print(aHeap.array)
+print(aHeap.sort())
+print(aHeap.array)
