@@ -66,6 +66,7 @@
 **Usage:** 
 - `BinaryTree.getChildDirection(node)` returns `'left'` or `'right'` denoting the direction in which `node` is a child of `node.parent`
 - `BinaryTree.getChildDirection(tree.root)` returns `None`
+
 **Time Complexity:** *ϴ(1)*
 
 ---
@@ -75,6 +76,7 @@
 
 **Usage:** 
 - `BinaryTree.getSubtreeSize(root)` returns the size of the subtree rooted at `root`
+
 **Time Complexity:** *ϴ(N)*
 
 ---
@@ -84,6 +86,7 @@
 
 **Usage:** 
 - `BinaryTree.getDeepCopyNode(root)` returns a deep copy of the `Node` object which represents the root of the subtree rooted at `root`
+
 **Time Complexity:** *ϴ(h)*
 
 ---
@@ -93,6 +96,7 @@
 
 **Usage:** 
 - `BinaryTree.getDeepCopySubtree(root)` returns a `BinaryTree` object which represents deep copy of the  subtree rooted at `root`
+
 **Time Complexity:** *ϴ(h)*
 
 ---
