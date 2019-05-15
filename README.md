@@ -10,3 +10,4 @@
 | `extractMax()` | removes the largest element in the `Heap` object | *ϴ(log n)* |
 | `insert(key)` | inserts key into the `Heap` object | *ϴ(log n)* |
 | `increaseKey(index, key)` | increases the value of the element at the position `index` in the `Heap` object to `value` | *ϴ(log n)* |
+| `sort()` | returns a list of the `Heap` elements in sorted order | *ϴ(n log n)* | 
