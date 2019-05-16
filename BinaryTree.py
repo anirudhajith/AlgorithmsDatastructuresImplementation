@@ -1,11 +1,3 @@
-class Node:
-    def __init__(self, key):
-        self.key = key
-        self.left = None
-        self.right = None
-        self.parent = None
-
-
 class BinaryTree:
     def __init__(self, key, left=None, right=None):
         self.key = key
