@@ -1,3 +1,4 @@
+
 # Implementations of some Algorithms and Datastructures in Python
 
 ## Heap
@@ -16,87 +17,67 @@
 ## BinaryTree 
 #### Implemented in:  `BinaryTree.py`
 
- `BinaryTree(node=None)`
+ `BinaryTree(key, left=None, right=None)`
 
-**returns:**  `BinaryTree` object
-
-**Usage:** 
-- `BinaryTree()` returns an empty `BinaryTree`
-- `BinaryTree(node)` returns a `BinaryTree` object whose root is initialized to the `Node` object `node`
-
-**Time Complexity:** *ϴ(1)*
-
----
- `BinaryTree.createLeaf(key, parentNode=None, direction=None)`
-
-**returns:**  `Node` object
-
-**Usage:** 
-- `BinaryTree.createLeaf(key)` is used to initialize an empty `BinaryTree` with a single `Node` of key `key`. A reference to this `Node` object is returned. 
-- `BinaryTree.createLeaf(key, parentNode, direction)` is used to create a new leaf at `parentNode` in direction `direction`
+**Returns:**  new `BinaryTree` object
+**Arguments:**
+- `key`: value of key at root of new `BinaryTree`
+- `left`: left subtree `BinaryTree`
+- `right`: right subtree `BinaryTree`
 
 **Time Complexity:** *ϴ(1)*
 
 ---
- `BinaryTree.insertSubtree(tree, parentNode=None, direction=None)`
+ `BinaryTree.createLeaf(key, direction)`
 
-**returns:**  void
-
-**Usage:** 
-- `BinaryTree.insertSubtree(tree)` is used to initialize an empty `BinaryTree` to `tree`
-- `BinaryTree.insertSubtree(tree, parentNode, direction)` inserts `tree` at `parentNode` in direction `direction`
-
-**Time Complexity:** *ϴ(1)*
-
----
- `BinaryTree.detachSubtree(root)`
-
-**returns:**  `BinaryTree` object
-
-**Usage:** 
-- `BinaryTree.detachSubtree(root)` detaches and returns the `BinaryTree` rooted at `root` 
+**Returns:**  `BinaryTree` corresponding to new leaf
+**Usage:** creates a new leaf in direction `direction`
+**Arguments:**
+- `key`: value of key at new leaf
+- `direction`: direction of new leaf with respect to its parent. Accepted values are `'left'` and `'right'`
 
 **Time Complexity:** *ϴ(1)*
 
 ---
- `BinaryTree.getChildDirection(node)`
+ `BinaryTree.insertSubtree(tree, direction)`
 
-**returns:**  `string` or `None`
-
-**Usage:** 
-- `BinaryTree.getChildDirection(node)` returns `'left'` or `'right'` denoting the direction in which `node` is a child of `node.parent`
-- `BinaryTree.getChildDirection(tree.root)` returns `None`
+**Returns:**  `BinaryTree` corresponding to root of new subtree `tree`
+**Usage:** inserts new subtree `tree` at root in direction `direction`
+**Arguments:**
+- `tree`: `BinaryTree` object corresponding to subtree to be inserted at root
+- `direction`: direction of `tree` with respect to its parent. Accepted values are `'left'` and `'right'`
 
 **Time Complexity:** *ϴ(1)*
 
 ---
-`BinaryTree.getSubtreeSize(root)`
+ `BinaryTree.detachSubtree()`
 
-**returns:**  `int`
-
-**Usage:** 
-- `BinaryTree.getSubtreeSize(root)` returns the size of the subtree rooted at `root`
-
-**Time Complexity:** *ϴ(N)*
+**Returns:**  `BinaryTree` object which was detached from its parent
+**Usage:**    detaches and returns the `BinaryTree` object
+**Arguments:** None 
+**Time Complexity:** *ϴ(1)*
 
 ---
-`BinaryTree.getDeepCopyNode(root)`
+ `BinaryTree.getDirection()`
 
-**returns:**  `Node` object
-
-**Usage:** 
-- `BinaryTree.getDeepCopyNode(root)` returns a deep copy of the `Node` object which represents the root of the subtree rooted at `root`
-
-**Time Complexity:** *ϴ(h)*
+**Returns:**  `'left'` or `'right'` or `None`
+**Usage:** returns the direction in which the `BinaryTree` object is a child of its parent. Returns `None` if the object has no parent
+**Arguments:** None
+**Time Complexity:** *ϴ(1)*
 
 ---
-`BinaryTree.getDeepCopySubtree(root)`
+`BinaryTree.getSize()`
 
-**returns:**  `BinaryTree` object
+**returns:**  `int` denoting the size of the tree rooted at the `BinaryTree` object
+**Usage:**  returns the size of the subtree rooted at the `BinaryTree` object
+**Arguments:** None
+**Time Complexity:** *ϴ(N)* where N is the size of the tree
 
-**Usage:** 
-- `BinaryTree.getDeepCopySubtree(root)` returns a `BinaryTree` object which represents deep copy of the  subtree rooted at `root`
+---
+`BinaryTree.getDeepCopy()`
 
-**Time Complexity:** *ϴ(h)*
+**returns:**  `BinaryTree` object which is a deep copy
+**Usage:** constructs and returns a deep copy of the `BinaryTree` object
+**Time Complexity:** *ϴ(N)* where N is the size of the tree
 
 ---

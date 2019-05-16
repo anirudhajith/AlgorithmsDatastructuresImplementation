@@ -53,13 +53,13 @@ class BinaryTree:
         else:
             return None
 
-    def getSubtreeSize(self):
+    def getSize(self):
         size = 1
 
         if self.left != None:
-            size += self.left.getSubtreeSize()
+            size += self.left.getSize()
         if self.right != None:
-            size += self.right.getSubtreeSize()
+            size += self.right.getSize()
 
         return size
 
