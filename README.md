@@ -20,6 +20,7 @@
  `BinaryTree(key, left=None, right=None)`
 
 **Returns:**  new `BinaryTree` object
+
 **Arguments:**
 - `key`: value of key at root of new `BinaryTree`
 - `left`: left subtree `BinaryTree`
@@ -31,7 +32,9 @@
  `BinaryTree.createLeaf(key, direction)`
 
 **Returns:**  `BinaryTree` corresponding to new leaf
+
 **Usage:** creates a new leaf in direction `direction`
+
 **Arguments:**
 - `key`: value of key at new leaf
 - `direction`: direction of new leaf with respect to its parent. Accepted values are `'left'` and `'right'`
@@ -42,7 +45,9 @@
  `BinaryTree.insertSubtree(tree, direction)`
 
 **Returns:**  `BinaryTree` corresponding to root of new subtree `tree`
+
 **Usage:** inserts new subtree `tree` at root in direction `direction`
+
 **Arguments:**
 - `tree`: `BinaryTree` object corresponding to subtree to be inserted at root
 - `direction`: direction of `tree` with respect to its parent. Accepted values are `'left'` and `'right'`
@@ -53,31 +58,44 @@
  `BinaryTree.detachSubtree()`
 
 **Returns:**  `BinaryTree` object which was detached from its parent
+
 **Usage:**    detaches and returns the `BinaryTree` object
+
 **Arguments:** None 
+
 **Time Complexity:** *ϴ(1)*
 
 ---
  `BinaryTree.getDirection()`
 
 **Returns:**  `'left'` or `'right'` or `None`
+
 **Usage:** returns the direction in which the `BinaryTree` object is a child of its parent. Returns `None` if the object has no parent
+
 **Arguments:** None
+
 **Time Complexity:** *ϴ(1)*
 
 ---
 `BinaryTree.getSize()`
 
-**returns:**  `int` denoting the size of the tree rooted at the `BinaryTree` object
+**Returns:**  `int` denoting the size of the tree rooted at the `BinaryTree` object
+
 **Usage:**  returns the size of the subtree rooted at the `BinaryTree` object
+
 **Arguments:** None
+
 **Time Complexity:** *ϴ(N)* where N is the size of the tree
 
 ---
 `BinaryTree.getDeepCopy()`
 
-**returns:**  `BinaryTree` object which is a deep copy
+**Returns:**  `BinaryTree` object which is a deep copy
+
 **Usage:** constructs and returns a deep copy of the `BinaryTree` object
+
+**Arguments:** None
+
 **Time Complexity:** *ϴ(N)* where N is the size of the tree
 
 ---
