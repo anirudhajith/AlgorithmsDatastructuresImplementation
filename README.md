@@ -16,7 +16,7 @@
 ## BinaryTree 
 #### Implemented in:  `BinaryTree.py`
 
- ### `BinaryTree(node=None)`
+ `BinaryTree(node=None)`
 
 **returns:**  `BinaryTree` object
 
@@ -27,7 +27,7 @@
 **Time Complexity:** *ϴ(1)*
 
 ---
- ### `BinaryTree.createLeaf(key, parentNode=None, direction=None)`
+ `BinaryTree.createLeaf(key, parentNode=None, direction=None)`
 
 **returns:**  `Node` object
 
@@ -38,7 +38,7 @@
 **Time Complexity:** *ϴ(1)*
 
 ---
- ### `BinaryTree.insertSubtree(tree, parentNode=None, direction=None)`
+ `BinaryTree.insertSubtree(tree, parentNode=None, direction=None)`
 
 **returns:**  void
 
@@ -49,7 +49,7 @@
 **Time Complexity:** *ϴ(1)*
 
 ---
- ### `BinaryTree.detachSubtree(root)`
+ `BinaryTree.detachSubtree(root)`
 
 **returns:**  `BinaryTree` object
 
@@ -59,41 +59,44 @@
 **Time Complexity:** *ϴ(1)*
 
 ---
- ### `BinaryTree.getChildDirection(node)`
+ `BinaryTree.getChildDirection(node)`
 
 **returns:**  `string` or `None`
 
 **Usage:** 
 - `BinaryTree.getChildDirection(node)` returns `'left'` or `'right'` denoting the direction in which `node` is a child of `node.parent`
 - `BinaryTree.getChildDirection(tree.root)` returns `None`
+
 **Time Complexity:** *ϴ(1)*
 
 ---
-### `BinaryTree.getSubtreeSize(root)`
+`BinaryTree.getSubtreeSize(root)`
 
 **returns:**  `int`
 
 **Usage:** 
 - `BinaryTree.getSubtreeSize(root)` returns the size of the subtree rooted at `root`
+
 **Time Complexity:** *ϴ(N)*
 
 ---
-### `BinaryTree.getDeepCopyNode(root)`
+`BinaryTree.getDeepCopyNode(root)`
 
 **returns:**  `Node` object
 
 **Usage:** 
 - `BinaryTree.getDeepCopyNode(root)` returns a deep copy of the `Node` object which represents the root of the subtree rooted at `root`
+
 **Time Complexity:** *ϴ(h)*
 
 ---
-### `BinaryTree.getDeepCopySubtree(root)`
+`BinaryTree.getDeepCopySubtree(root)`
 
 **returns:**  `BinaryTree` object
 
 **Usage:** 
 - `BinaryTree.getDeepCopySubtree(root)` returns a `BinaryTree` object which represents deep copy of the  subtree rooted at `root`
+
 **Time Complexity:** *ϴ(h)*
 
 ---
-
