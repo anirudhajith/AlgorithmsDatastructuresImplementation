@@ -5,7 +5,7 @@ class BinaryTree:
         self.right = right
         self.parent = None
 
-        if not isinstance(left, BinaryTree) or not isinstance(right, BinaryTree):
+        if (not isinstance(left, BinaryTree) and left != None) or (not isinstance(right, BinaryTree) and right != None):
             raise ValueError('Children must be instances of BinaryTree')
         if key == None:
             raise ValueError('BinaryTree cannot have None key')
