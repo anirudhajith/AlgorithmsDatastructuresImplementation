@@ -1,25 +1,87 @@
 
+
 # Implementations of some Algorithms and Datastructures in Python
 
 ## Heap
 #### Implemented in `Heap.py`
+`Heap(array)`
 
-| Function | Description | Time Complexity |
-|----------|-------------|------------------|
-|`Heap(array)`| returns a `Heap` object initialized to contain the same elements as `array` | *ϴ(n)* |
-| `getMax()` | returns the largest element in the `Heap` object | *ϴ(1)* |
-| `extractMax()` | removes the largest element in the `Heap` object | *ϴ(log n)* |
-| `insert(key)` | inserts key into the `Heap` object | *ϴ(log n)* |
-| `increaseKey(index, key)` | increases the value of the element at the position `index` in the `Heap` object to `value` | *ϴ(log n)* |
-| `sort()` | returns a list of the `Heap` elements in sorted order | *ϴ(n log n)* | 
+**Returns:** a new `Heap` object initialized to contain the same elements as `array` 
 
+**Usage:** returns a `Heap` object populated with the elements of `array`
 
+**Arguments:** 
+- `array`: a list containing the elements the `Heap` object has to be initialized with
+
+**Time Complexity:** *ϴ(N)* where N = `len(array)` 
+
+---
+`Heap.getMax()`
+
+**Returns:** the largest element in the `Heap` object
+
+**Arguments:** None
+
+**Usage:** returns the largest element in the `Heap` without disturbing the `Heap` object
+
+**Time Complexity:** *ϴ(1)*
+
+---
+`Heap.extractMax()`
+
+**Returns:** None
+
+**Arguments:** None
+
+**Usage:** removes the largest element in the `Heap` object
+
+**Time Complexity:** *ϴ(h)* where h is the height of the `Heap` object
+
+---
+`Heap.insert(key)`
+
+**Returns:** None
+
+**Arguments:**
+- `key`: element to be inserted into the `Heap` object
+
+**Usage:** inserts `key` into the `Heap` object
+
+**Time Complexity:** *ϴ(h)* where h is the height of the `Heap` object
+
+---
+`Heap.increaseKey(index, key)`
+
+**Returns:** None
+
+**Arguments:**
+- `index`: `int` index of element to be increased
+- `key`: new value of element
+
+**Usage:** increases the element at position `index` to value `key`
+
+**Time Complexity:** *ϴ(h)* where h is the height of the `Heap` object
+
+---
+`Heap.sort()`
+
+**Returns:** sorted list of elements in `Heap` object
+
+**Arguments:** None
+
+**Usage:** returns a sorted list of elements in `Heap` object. `Heap` object is rendered empty after the call.
+
+**Time Complexity:** *ϴ(N log N)* where N is the number of elements in the `Heap`
+
+---
 ## BinaryTree 
 #### Implemented in:  `BinaryTree.py`
 
  `BinaryTree(key, left=None, right=None)`
 
 **Returns:**  new `BinaryTree` object
+
+**Usage:** returns a `BinaryTree` object whose root key is `key`, left pointer points to `left` and right pointer points to `right`
 
 **Arguments:**
 - `key`: value of key at root of new `BinaryTree`
