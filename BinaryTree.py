@@ -5,10 +5,10 @@ class BinaryTree:
         self.right = right
         self.parent = None
 
-        if (not isinstance(left, BinaryTree) and left != None) or (not isinstance(right, BinaryTree) and right != None):
-            raise ValueError('Children must be instances of BinaryTree')
+        if (not isinstance(left, type(self)) and left != None) or (not isinstance(right, type(self)) and right != None):
+            raise ValueError('Children must be instances of ' + self.__class__.__name__)
         if key == None:
-            raise ValueError('BinaryTree cannot have None key')
+            raise ValueError(self.__class__.__name__ + ' cannot have None key')
         else:
             if left != None:
                 left.parent = self
@@ -16,11 +16,11 @@ class BinaryTree:
                 right.parent = self
 
     def createLeaf(self, key, direction):
-        return self.insertSubtree(BinaryTree(key), direction)
+        return self.insertSubtree(type(self)(key), direction)
 
     def insertSubtree(self, tree, direction):
-        if not isinstance(tree, BinaryTree):
-            raise ValueError('tree is not an instance of BinaryTree')
+        if not isinstance(tree, type(self)):
+            raise ValueError('tree is not an instance of ' + self.__class__.__name__)
         else:
             if direction == 'left':
                 self.left = tree
@@ -64,7 +64,7 @@ class BinaryTree:
         return size
 
     def getDeepCopy(self):
-        copy = BinaryTree(self.key)
+        copy = type(self)(self.key)
 
         if self.left != None:
             copy.left = self.left.getDeepCopy()
