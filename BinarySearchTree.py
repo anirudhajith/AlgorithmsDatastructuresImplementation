@@ -1,9 +1,15 @@
 from BinaryTree import BinaryTree
+from random import shuffle
 
 class BinarySearchTree(BinaryTree):
 
-    def __init__(self, key):
-        BinaryTree.__init__(self, [key])
+    def __init__(self, array):
+
+        shuffle(array)                                      # for random construction of BST
+        
+        BinaryTree.__init__(self, array[0])
+        for key in array[1:]:
+            self.insert(key)
 
     def insert(self, key):
         currentKey = self.key[0]
@@ -31,37 +37,24 @@ class BinarySearchTree(BinaryTree):
         if key == currentKey:
             return self
         elif key < currentKey:
-            if self.left == None:
-                return False
-            else:
-                return self.left.find(key)
+            return (None if self.left == None else self.left.find(key))
         elif key > currentKey:
-            if self.right == None:
-                return False
-            else:
-                return self.right.find(key)
+            return (None if self.right == None else self.right.find(key))
         else:
             raise ValueError('Comparison failed')
 
     def count(self, key):
         reference = self.find(key)
-        if reference == False:
-            return 0
-        else:
-            return len(self.key)
+        return (0 if reference == None else return len(self.key))
 
     def contains(self, key):
         count = self.count(key)
-
-        if count > 0:
-            return True
-        else:
-            return False
+        return (True if count > 0 else False)
 
     def delete(self, key):
         reference = self.find(key)
 
-        if reference == False:
+        if reference == None:
             return False
         else:
             reference._delete()
@@ -71,16 +64,10 @@ class BinarySearchTree(BinaryTree):
         pass
     
     def getMinimum(self):
-        if self.left == None:
-            return self.key[0]
-        else:
-            return self.left.getMinimum()
+        return (self.key[0] if self.left == None else self.left.getMinimum())
     
     def getMaximum(self):
-        if self.right == None:
-            return self.key[0]
-        else:
-            return self.right.getMaximum()
+        return (self.key[0] if self.right == None else return self.right.getMaximum())
     
     def getSuccessor(self):
         direction = self.getDirection()
@@ -129,8 +116,7 @@ class BinarySearchTree(BinaryTree):
 '''
 Required Functionality:
 
-__init__(key): returns binary search tree initialized to key
-__init__(list): returns binary search tree initialized with an array of elements
+__init__(array): returns binary search tree initialized with an array of elements
 find(key): returns node containing key
 count(key): returns count of key in BST
 contains(key): Checks if BST contains key
