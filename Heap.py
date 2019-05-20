@@ -63,7 +63,7 @@ class Heap:
     def sort(self):
         fullSize = self.size
         sortedArray = []
-        for index in range(fullSize):
+        for _ in range(fullSize):
             sortedArray.append(self.getMax())
             self.extractMax()
         
