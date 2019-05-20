@@ -89,28 +89,46 @@ class BinarySearchTree(BinaryTree):
             self.key.pop()
         else:
             direction = self.getDirection()
-            if direction == 'left' and self.right == None:
-                self.left.parent = self.parent
-                self.parent.left = self.left
-                self.parent = None
-                self.left = None
-            elif direction == 'right' and self.left == None:
-                self.right.parent = self.parent
-                self.parent.right = self.right
-                self.parent = None
-                self.right = None
-            elif direction == None:
-                if self.right == None:
-                    self.left.parent = None
-                    self.parent = None
-                    self.left = None
-                elif self.left == None:
-                    self.right.parent = None
-                    self.parent = None
-                    self.right = None
-        
+
+            if direction == None:
+                pass
+            else:
+                if direction == 'left':
+                    if self.left == None and self.right == None:
+                        self.parent.left = None
+                        self.parent = None
+                    elif self.left == None:
+                        self.right.parent = self.parent
+                        self.parent.left = self.right
+                        self.parent = None
+                        self.right = None
+                    elif self.right == None:
+                        self.left.parent = self.parent
+                        self.parent.left = self.left
+                        self.parent = None
+                        self.left = None
+                    else:
+                        pass
 
 
+
+
+                elif direction == 'right':
+                    if self.left == None and self.right == None:
+                        self.parent.right = None
+                        self.parent = None
+                    elif self.left == None:
+                        self.right.parent = self.parent
+                        self.parent.right = self.right
+                        self.parent = None
+                        self.right = None
+                    elif self.right == None:
+                        self.left.parent = self.parent
+                        self.parent.right = self.left
+                        self.parent = None
+                        self.left = None
+                    else:
+                        pass
 
 
 '''
@@ -127,5 +145,9 @@ getPredecessor(key): returns predecessor node key
 rotate(node): rotates
 insert(key): inserts key into BST
 delete(key): deletes key from BST
+getMinimum(): returns value of smallest key in tree
+getMaximum(): returns value of largest key in tree
+findMinimum(): returns reference to node containing smallest value in tree
+findMinimum(): returns reference to node containing largest value in tree
 
 '''
