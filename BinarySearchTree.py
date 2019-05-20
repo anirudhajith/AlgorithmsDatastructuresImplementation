@@ -1,12 +1,14 @@
 from BinaryTree import BinaryTree
 from random import shuffle
 
+
 class BinarySearchTree(BinaryTree):
 
     def __init__(self, array):
 
-        shuffle(array)                                      # for random construction of BST
-        
+        # for random construction of BST
+        shuffle(array)
+
         BinaryTree.__init__(self, array[0])
         for key in array[1:]:
             self.insert(key)
@@ -61,27 +63,46 @@ class BinarySearchTree(BinaryTree):
             return True
 
     def rotate(self, direction):
-        pass
-    
+        myDirection = self.getDirection()
+        if direction == 'left':
+            if self.right == None:
+                raise Exception('Left rotation not possible')
+            else:
+                pass
+        elif direction == 'right':
+            if self.left == None:
+                raise Exception('Right rotation not possible')
+            else:
+                pass
+                
+        else:
+            raise ValueError('Invalid direction')
+
+
+    def findMinimum(self):
+        return (self.key if self.left == None else self.left.findMinimum())
+
+    def findMaximum(self):
+        return (self.key if self.right == None else return self.right.findMaximum())
+
     def getMinimum(self):
-        return (self.key[0] if self.left == None else self.left.getMinimum())
-    
+        return self.findMinimum().key[0]
+
     def getMaximum(self):
-        return (self.key[0] if self.right == None else return self.right.getMaximum())
-    
-    def getSuccessor(self):
+        return self.findMaximum().key[0]
+
+    def findSuccessor(self):
         direction = self.getDirection()
         if direction == 'right' or direction == None:
             if self.right == None:
                 return None
             else:
-                return self.right.getMinimum()
+                return self.right.findMinimum()
         elif direction == 'left':
             if self.right == None:
                 return self.parent
             else:
-                return self.right.getMinimum()
-
+                return self.right.findMinimum()
 
     def _delete(self):
 
@@ -91,7 +112,18 @@ class BinarySearchTree(BinaryTree):
             direction = self.getDirection()
 
             if direction == None:
-                pass
+                if self.left == None and self.right == None:
+                    self = BinarySearchTree([])
+                elif self.left == None:
+                    self.right.parent = None
+                    self = self.right
+                elif self.right == None:
+                    self.left.parent = None:
+                    self = self.left
+                else:
+                    successor = self.findSuccessor()
+                    self.key = successor.key
+                    successor._delete()
             else:
                 if direction == 'left':
                     if self.left == None and self.right == None:
@@ -108,10 +140,9 @@ class BinarySearchTree(BinaryTree):
                         self.parent = None
                         self.left = None
                     else:
-                        pass
-
-
-
+                        successor = self.findSuccessor()
+                        self.key = successor.key
+                        successor._delete()
 
                 elif direction == 'right':
                     if self.left == None and self.right == None:
@@ -128,7 +159,9 @@ class BinarySearchTree(BinaryTree):
                         self.parent = None
                         self.left = None
                     else:
-                        pass
+                        successor = self.findSuccessor()
+                        self.key = successor.key
+                        successor._delete()
 
 
 '''
