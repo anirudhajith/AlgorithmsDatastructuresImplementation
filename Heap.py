@@ -85,7 +85,7 @@ class Heap:
         self.array[index1] = self.array[index2]
         self.array[index2] = temp
 
-
+'''
 A = [3, 8, 2 , 9, -1, 0, 6, 9, 22, 7, -5, 8, 9.2, 3.14, 10, 9, -3, 5, 8, 2.73, 12, 8]
 aHeap = Heap(A)
 print(aHeap.array)
@@ -96,3 +96,4 @@ print(aHeap.array)
 
 print(aHeap.sort())
 print(aHeap.array)
+'''
